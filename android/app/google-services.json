@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "322581622666",
+    "project_id": "classesapp-c2170",
+    "storage_bucket": "classesapp-c2170.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322581622666:android:46e3fe81c5425cdb4ba273",
+        "android_client_info": {
+          "package_name": "com.example.classes_application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNUDu0kUyXVDJqPK4EVRkRzaoXoNAhjJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
