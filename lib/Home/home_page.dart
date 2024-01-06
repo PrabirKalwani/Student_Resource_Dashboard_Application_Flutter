@@ -1,3 +1,4 @@
+import 'package:classes_application/Authentication/LoginOrRegister.dart';
 import 'package:classes_application/Authentication/login_page.dart';
 import 'package:classes_application/Components/actioncard.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -18,7 +19,6 @@ class HomePage extends StatelessWidget {
     String lottieUrl = isDarkMode
         ? 'https://lottie.host/605b4198-423a-4603-86cc-a2024b9a9c47/4icUTEit2D.json'
         : 'https://lottie.host/96484f47-255e-4112-b80a-4d24f68ac587/4icUTEit2D.json ';
-
     //  nb7eDCcxXp.json black mountains
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
@@ -102,9 +102,17 @@ class HomePage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(top: 10.0),
               child: IconButton(
-                  iconSize: 32.0,
-                  icon: Icon(Icons.power_settings_new),
-                  onPressed: signUserOut),
+                iconSize: 32.0,
+                icon: Icon(Icons.power_settings_new),
+                onPressed: () {
+                  signUserOut();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const LoginOrRegisterPage()),
+                  );
+                },
+              ),
             ),
           )
         ],
