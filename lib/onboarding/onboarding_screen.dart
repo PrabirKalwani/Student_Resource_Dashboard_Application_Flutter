@@ -1,4 +1,4 @@
-import 'package:classes_application/Authentication/home_page.dart';
+import 'package:classes_application/Home/home_page.dart';
 import 'package:classes_application/onboarding/onboarding_page3.dart';
 import 'package:classes_application/onboarding/onboarding_page_1.dart';
 import 'package:classes_application/onboarding/onboarding_page_2.dart';
@@ -42,7 +42,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               GestureDetector(
-                child: Text('skip'),
+                child: Text(
+                  'skip',
+                  style: TextStyle(
+                      color: Theme.of(context).colorScheme.background),
+                ),
                 onTap: () {
                   _controller.jumpToPage(2);
                 },
@@ -50,7 +54,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               SmoothPageIndicator(controller: _controller, count: 3),
               onLastPage
                   ? GestureDetector(
-                      child: Text('done'),
+                      child: Text(
+                        'done',
+                        style: TextStyle(
+                            color: Theme.of(context).colorScheme.background),
+                      ),
                       onTap: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
@@ -59,7 +67,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       },
                     )
                   : GestureDetector(
-                      child: Text('next'),
+                      child: Text(
+                        'next',
+                        style: TextStyle(
+                            color: Theme.of(context).colorScheme.background),
+                      ),
                       onTap: () {
                         _controller.nextPage(
                             duration: Duration(milliseconds: 500),

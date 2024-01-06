@@ -4,6 +4,7 @@ import "package:classes_application/Components/textfield.dart";
 import "package:classes_application/services/auth_service.dart";
 import "package:firebase_auth/firebase_auth.dart";
 import "package:flutter/material.dart";
+import "package:lottie/lottie.dart";
 
 class LoginPage extends StatefulWidget {
   final Function? onTap;
@@ -23,11 +24,12 @@ class _LoginPageState extends State<LoginPage> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            backgroundColor: Colors.deepPurple,
+            backgroundColor: Theme.of(context).colorScheme.primary,
             title: Center(
               child: Text(
                 message,
-                style: const TextStyle(color: Colors.white),
+                style:
+                    TextStyle(color: Theme.of(context).colorScheme.background),
               ),
             ),
           );
@@ -55,7 +57,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey[300],
+        backgroundColor: Theme.of(context).colorScheme.background,
         body: SafeArea(
             child: Center(
           child: SingleChildScrollView(
@@ -63,24 +65,27 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(
-                  height: 50,
+                  height: 15,
                 ),
-                const Icon(
-                  Icons.lock,
-                  size: 100,
+                Container(
+                  width: 175,
+                  height: 175,
+                  child: Lottie.network(
+                    'https://lottie.host/605b4198-423a-4603-86cc-a2024b9a9c47/4icUTEit2D.json',
+                  ),
                 ),
                 const SizedBox(
-                  height: 50,
+                  height: 15,
                 ),
                 Text(
-                  "Welcome Back You've Have Been Missed !",
+                  "Pinnacle Classes",
                   style: TextStyle(
-                    color: Colors.grey[700],
+                    color: Theme.of(context).colorScheme.primary,
                     fontSize: 16,
                   ),
                 ),
                 const SizedBox(
-                  height: 25,
+                  height: 15,
                 ),
                 MyTextField(
                   controller: emailController,
@@ -105,7 +110,8 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       Text(
                         "Forgot Password?",
-                        style: TextStyle(color: Colors.grey[600]),
+                        style: TextStyle(
+                            color: Theme.of(context).colorScheme.primary),
                       )
                     ],
                   ),
@@ -115,29 +121,30 @@ class _LoginPageState extends State<LoginPage> {
                   text: 'Sign In',
                   onTap: signUserIn,
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 25),
                 Row(
                   children: [
                     Expanded(
                       child: Divider(
                         thickness: 0.6,
-                        color: Colors.grey[400],
+                        color: Theme.of(context).colorScheme.primary,
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10.0),
                       child: Text('Or Continue With',
-                          style: TextStyle(color: Colors.grey[600])),
+                          style: TextStyle(
+                              color: Theme.of(context).colorScheme.primary)),
                     ),
                     Expanded(
                       child: Divider(
                         thickness: 0.6,
-                        color: Colors.grey[400],
+                        color: Theme.of(context).colorScheme.primary,
                       ),
                     )
                   ],
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 25),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -152,7 +159,7 @@ class _LoginPageState extends State<LoginPage> {
                     )
                   ],
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 25),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
